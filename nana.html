@@ -1,0 +1,52 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<meta name = "viewport" content = "width=device-width,initial-scale=1.0">
+<link href="css/test.css" rel="stylesheet" type="text/css">
+<link href="myjs/test.js" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<section class="fullsize-video-bg">
+	<div id="video-viewport">
+		<video autoplay muted id="myVideo">
+			<source src="finalsnowboard.mp4" type="video/mp4" />
+		</video>
+        <iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+        <audio autoplay="true" src="finalsnowboard.mp4" type="audio/mpeg" id="myAudio"></audio>
+	</div>
+</section>
+<div class="content" id ="mark" style="visibility: hidden">
+  <h1>なな先生</h1>
+  <p>A female Japanese snowboarder from Japan who is fluent in both Japanese and English! What are you waiting for? Sign up for a skype lesson now! You won't be disappointed!</p>
+  <button id="myBtn" onclick="myFunction()" class = "b">Pause</button>
+  <a href="cart.html" class = "b">Signup</a>
+</div>
+</body>
+</html>
+    
+<script>
+function showIt() {
+  document.getElementById("mark").style.visibility = "visible";
+}
+setTimeout("showIt()", 20000); // after 1 sec
+
+var video = document.getElementById("myVideo");
+var audio = document.getElementById("myAudio");
+var btn = document.getElementById("myBtn");
+    
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    audio.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    audio.pause();
+    btn.innerHTML = "Play";
+  }
+}
+
+</script>
